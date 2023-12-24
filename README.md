@@ -1,24 +1,37 @@
-# README
+## Test Summary
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The purpose of the test is to reproduce one feature: send and receive money between accounts.
 
-Things you may want to cover:
+You will have to design an API for the frontend to interact with the backend for making transactions.
 
-* Ruby version
+Here is the story:
 
-* System dependencies
+- An account can have either "pending", "verified", or "unverified" status.
+- Only "verified" accounts can send or receive money.
+- Other types of accounts when sending / receiving money, the API should return a 403 status code.
+- Sending money from one account to another would mean that the money will be deducted from the sender and deposited to the receiver.
 
-* Configuration
+## Instructions
 
-* Database creation
+### Code
 
-* Database initialization
+In the repository, you will find a Ruby on Rails application with only one single model: Account. It represents a specific account.
 
-* How to run the test suite
+In order to implement the feature, you will have to extend the repository and add your logic on top of it.
 
-* Services (job queues, cache servers, search engines, etc.)
+Please keep the following points in mind:
 
-* Deployment instructions
+- You only need to add logic / models / endpoints related to the above story.
+- You can add all the models you need or extend the existing ones;
+- You can add/modify as many gems as you want or change the Ruby version;
+- Make your code as clear as possible, it should be understandable at a first glance (comments are more than welcome);
+- Make sure that all of your APIs are well-documented, OpenAPI specification is preferred.
+- Tests are more than welcome;
 
-* ...
+### Use Case
+
+The use case we want to reproduce is the following:
+
+- A verified user can send money to any verified account in the system.
+- Users should be able to send their money by "email" or "phone number"
+- Users should be able to see their transaction history, this includes inbound / outbound transactions.
